@@ -1,19 +1,16 @@
-package io.pratical.p0002;
+package io.practical.p0002;
 
 import java.util.concurrent.CountDownLatch;
 
-/**
- * @author <a href="mailto:simon_aurore@hotmail.com">Aurore SIMON</a>
- */
 public class Counter extends Thread {
 
 	private static final int COUNT_SIZE = 10000;
 	private int counter = 0;
-	private CountDownLatch latch;
+	private CountDownLatch countDownLatch;
 
 	public Counter(String name, CountDownLatch latch) {
 		super(name);
-		this.latch = latch;
+		this.countDownLatch = latch;
 	}
 
 	public void increment() {
@@ -27,7 +24,7 @@ public class Counter extends Thread {
 		while (counter < COUNT_SIZE) {
 			increment();
 		}
-		latch.countDown();
+		countDownLatch.countDown();
 
 		System.out.println("Thread " + getName() + " - " + counter + " end");
 	}

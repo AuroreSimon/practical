@@ -11,9 +11,6 @@ import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author <a href="mailto:simon_aurore@hotmail.com">Aurore SIMON</a>
- */
 public class FilesZipTool {
 
 	private static String SRC = new StringBuilder().append(System.getProperty("user.dir"))
@@ -32,14 +29,19 @@ public class FilesZipTool {
 			.append(FileSystems.getDefault().getSeparator()).toString();
 
 	public static void main(String[] args) throws IOException {
+		Path zipDirectoryPath = Paths.get(ZIP_PATH);
+		Path copyDirectoryPath = Paths.get(COPY_FILE_PATH);
+		Files.createDirectories(zipDirectoryPath);
+		Files.createDirectories(copyDirectoryPath);
+
 		Path pathZip = Paths.get(ZIP_PATH + "pratical.zip");
 		insertZip(pathZip);
 		extractZip(pathZip);
 	}
 
 	public static void insertZip(Path pathZip) throws IOException {
-
 		try (FileSystem fileSystem = createZip(pathZip)) {
+
 			for (int i = 1; i <= 3; i++) {
 				String fileName = new StringBuilder().append("file").append(i).append(".txt").toString();
 				Path file = Paths.get(FILE_PATH + fileName);
@@ -61,13 +63,13 @@ public class FilesZipTool {
 	public static void extractZip(Path pathZip) throws IOException {
 		FileSystem fileSystem = FileSystems.newFileSystem(pathZip, null);
 		Path directory = Paths.get(COPY_FILE_PATH);
-		
+
 		Files.walk(fileSystem.getPath("/")).forEach(path -> {
 			Path fileZip = path.getFileName();
 
 			if (fileZip != null) {
 				String fileName = fileZip.toString();
-				
+
 				try {
 					Files.deleteIfExists(Paths.get(COPY_FILE_PATH + fileName));
 					Path file = Files.createTempFile(directory, fileName.substring(0, fileName.length() - 4), ".txt");
