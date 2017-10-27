@@ -14,6 +14,9 @@ import org.openjdk.jmh.annotations.OutputTimeUnit;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 
+/**
+ * @author <a href="mailto:simon_aurore@hotmail.com">Aurore SIMON</a>
+ */
 @State(Scope.Thread)
 public class MyFirstBenchmark {
 

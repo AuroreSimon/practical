@@ -3,6 +3,9 @@ package io.pratical.p0002;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ForkJoinPool;
 
+/**
+ * @author <a href="mailto:simon_aurore@hotmail.com">Aurore SIMON</a>
+ */
 public class CounterThread {
 
 	private static int threadNb = 4;

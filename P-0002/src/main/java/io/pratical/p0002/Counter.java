@@ -2,6 +2,9 @@ package io.pratical.p0002;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * @author <a href="mailto:simon_aurore@hotmail.com">Aurore SIMON</a>
+ */
 public class Counter extends Thread {
 
 	private static final int COUNT_SIZE = 10000;

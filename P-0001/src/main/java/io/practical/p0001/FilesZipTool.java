@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author <a href="mailto:aurore.simon@ext.europarl.europa.eu">Aurore SIMON</a>
+ * @author <a href="mailto:simon_aurore@hotmail.com">Aurore SIMON</a>
  */
 public class FilesZipTool {
 
