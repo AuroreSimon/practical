@@ -10,6 +10,7 @@
 
 
 	<dependencies>
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-math3</artifactId>
@@ -21,7 +22,31 @@
 			<artifactId>Saxon-HE</artifactId>
 			<version>9.8.0-5</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>com.helger.maven</groupId>
+			<artifactId>ph-schematron-maven-plugin</artifactId>
+			<version>4.3.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.helger</groupId>
+			<artifactId>ph-schematron</artifactId>
+			<version>4.3.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-core</artifactId>
+			<version>${org.openjdk.jmh.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-generator-annprocess</artifactId>
+			<version>${org.openjdk.jmh.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -30,15 +55,15 @@
 				<groupId>org.bsc.maven</groupId>
 				<artifactId>maven-processor-plugin</artifactId>
 				<version>3.3.2</version>
-				<executions>
-					<execution>
-						<id>process</id>
-						<goals>
-							<goal>process</goal>
-						</goals>
-						<phase>generate-sources</phase>
-					</execution>
-				</executions>
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<id>process</id> -->
+<!-- 						<goals> -->
+<!-- 							<goal>process</goal> -->
+<!-- 						</goals> -->
+<!-- 						<phase>generate-sources</phase> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
 				<dependencies>
 					<dependency>
 						<groupId>org.openjdk.jmh</groupId>
